@@ -30,7 +30,11 @@ Another way to handle multiple exceptions is to use multiple except clauses. In 
 
 Not shown in the examples above, there are also additional clauses that can be executed under a try statement. The else clause executes in a try statement block if the program did not run into an exception, and is particularly useful in alerting the user of the program that a specific block of code worked. The finally keyword defines a statement that is executed every time, regardless of whether or not an exception was raised. 
 
-My online research supplemented my knowledge gained from Professor Root’s module videos and from the textbook. The websites that helped me the most were the official Python website (https://docs.python.org/3/tutorial/errors.html) and GeeksforGeeks.org (https://www.geeksforgeeks.org/python-exception-handling/). I thought these were the most helpful websites, since they both gave comprehensive explanations and definitions for different types of errors, and gave clear examples demonstrating the various ways to handle errors. These websites did so in a comprehensive way that was also easy to understand, whereas other websites either did not convey the information clearly, or gave too basic a rundown that was necessary to fully understand the concept. 
+My online research supplemented my knowledge gained from Professor Root’s module videos and from the textbook. The websites that helped me the most were the official Python website and GeeksforGeeks.org. I thought these were the most helpful websites, since they both gave comprehensive explanations and definitions for different types of errors, and gave clear examples demonstrating the various ways to handle errors. These websites did so in a comprehensive way that was also easy to understand, whereas other websites either did not convey the information clearly, or gave too basic a rundown that was necessary to fully understand the concept. 
+
+For more information, see the referenced links below:  
+[Official Python Website: Exception Handling](https://docs.python.org/3/tutorial/errors.html)  
+[GeeksforGeeks.org: Exception Handling](https://www.geeksforgeeks.org/python-exception-handling/)  
 
 
 ## Research: Pickling
@@ -53,7 +57,12 @@ There are, of course, more data types that can be pickled, but those listed abov
 
 Something else that I came across in my research on pickling is the concept of the “Buffer Protocol” in Python. It is my understanding that the buffer represents underlying memory that is periodically saved to the file in question. This is why one must invoke the .sync() method when using a shelf to store data. A benefit of a buffer is that they can be used to reference a block of memory without referencing the entire block, exposing select data to the programmer in an efficient way. 
 
-I ended up using the same websites to research this concept, as I was already familiar with them, and they had elements that I liked about them. I tried to use other websites but did not find their descriptive style to be as helpful as the official Python website (https://docs.python.org/3/library/pickle.html and https://docs.python.org/3/c-api/buffer.html#bufferobjects) and GeeksforGeeks.org (https://www.geeksforgeeks.org/understanding-python-pickling-example/). 
+I ended up using the same websites to research this concept, as I was already familiar with them, and they had elements that I liked about them. I tried to use other websites but did not find their descriptive style to be as helpful as the official Python website and GeeksforGeeks.org. 
+
+For more information, see the referenced links below:  
+[Official Python website: Pickling](https://docs.python.org/3/library/pickle.html)  
+[Official Python website: Buffer Objects](https://docs.python.org/3/c-api/buffer.html#bufferobjects)  
+[GeeksforGeeks.org: Pickling](https://www.geeksforgeeks.org/understanding-python-pickling-example/)  
 
 
 ## The Line Geometry Calculator Program
