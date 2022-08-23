@@ -16,7 +16,7 @@ By default, exceptions are not handled by Python, resulting in a confusing error
 
 An example of handling such errors is as follows, reproduced with changes from GeeksforGeeks.org (Figure 1). 
 
-![Basic code demonstrating error handling.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig1.png)
+![Basic code demonstrating error handling.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig%201.png)
 #### Figure 1. Basic code demonstrating error handling. 
 
 In this program, I want to calculate a simple math equation to find b given a. I defined the function so that the equation b = a / (a-3) runs only if a<4, so that the equation does not divide by zero when a=3. Next, I used the try and except statements to try the equation for each value in range(5), so every value from 0 to 4. For the exception that occurs, the program handles it and continues to execute. Here, we can see an example of two exceptions being handled, by defining each exception in a tuple. For the value of a=3, the equation b would evaluate to b = 3/0, throwing a ZeroDivisionError exception. For the value of a=4, since the function containing the equation was originally defined for a<4 only, the if statement containing the equation would not execute, and therefore b would not exist. Therefore, for the value a=4, a NameError exception would be thrown. 
@@ -25,7 +25,7 @@ Each time an exception occurs, it has an argument, which is Python’s default e
 
 Another way to handle multiple exceptions is to use multiple except clauses. In this way, one is able to tailor error messages more specifically based on the exception (figure 2). 
 
- 
+![Demonstrates the use multiple except clauses for more specific error handling.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig2.png)
 #### Figure 2. Demonstrates the use multiple except clauses for more specific error handling. 
 
 Not shown in the examples above, there are also additional clauses that can be executed under a try statement. The else clause executes in a try statement block if the program did not run into an exception, and is particularly useful in alerting the user of the program that a specific block of code worked. The finally keyword defines a statement that is executed every time, regardless of whether or not an exception was raised. 
@@ -62,7 +62,7 @@ I wanted to complete assignment 07 in a creative way that would not only familia
  
 I begin the program by writing a header containing the program title, description, and change log, and define distinct areas for data, processing, and presentation (figure 3). 
 
- 
+![Header containing the program title, description, and change log, with distinctly defined areas for data, processing, and presentation.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig3.png)
 #### Figure 3. Header containing the program title, description, and change log, with distinctly defined areas for data, processing, and presentation. 
 
 Technically, the next thing I did was tackle the process of defining the function to calculate the distance between two points. However, for ease in explaining my program, I will simply go through and explain each line of code in order of appearance in the file, rather than discuss what I did in chronological order. 
@@ -71,7 +71,7 @@ The Line Geometry Calculator Program: Data
 
 The figure below shows the first few lines of code of my program (figure 4). 
 
- 
+![Importing modules and defining variables.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig4.png)
 #### Figure 4. Importing modules and defining variables. 
 
 I imported the math and pickle modules to carry out essential functions of this program. The distance between two points formula involves a square root and a number-squared operation, which can be carried out by downloading the math module, as I discovered upon consultation with Google. The pickle module is required for obvious reasons, we want to pickle and unpickle data into and from a binary file.
@@ -84,38 +84,38 @@ The next part of my code is the Processing section, which defines the functions 
 
 Below shows the distance function, in which I write code to calculate the distance between two points. The function takes the arguments x_1, x_2, y_1, and y_2, which are inputted by the user. The function returns the variable d which represents the distance between the two points. I include a print function to display a message to the user what the calculated value is (figure 5). 
 
- 
+![Code for the distance function.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig5.png)
 #### Figure 5. Code for the distance function. 
 
 The next function defined in my code is the slope function. This function takes the arguments x_1, x_2, y_1, and y_2, which are inputted by the user, and returns the variable m which represents the slope of the line conjoining the two points (figure 6). 
 
- 
+ ![Code for the slope function.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig6.png)
 #### Figure 6. Code for the slope function. 
 
 In this function, there is a possibility to raise the ZeroDivisionError exception if the two user-inputted x-values are equal. Therefore, I wrote code to handle this possibility. Using a try statement and except clause, I specify that if the ZeroDivisionError exception is encountered, the m variable containing the value for slope is assigned the character string “INVALID DUE TO DIVISION BY ZERO.” A message is then printed that alerts the user of the exception, and prints the message that Python would normally print when this exception is encountered, using the exception argument e. The fact that the m variable contains a string of characters is important to remember for the next function. If the exception is not encountered, a message is printed that shows the user what the calculated slope value is. 
 
 The next function defined in my code is the y-intercept function. This function takes the arguments x_1, and y_1, which are inputted by the user, as well as m, the value for slope calculated in the previous function, and returns the variable b which represents the y-intercept of the line conjoining the two points (figure 7).
 
- 
+![Code for the y-intercept function.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig7.png)
 #### Figure 7. Code for the y-intercept function. 
 
 As stated previously, it is important to remember that m contains a string of text if the ZeroDivisionError exception is encountered in the slope function. In this case, since m would be a string and not a floating point or integer value, the data types of which are required for the mathematical equation defined in this function, the program would throw a TypeError exception if not handled properly. I use a try statement and except clause to specify that if a TypeError exception is encountered, the variable b is also assigned a string that says that the y-intercept is invalid due to an invalid slope. A message is also printed to inform the user that the y-intercept could not be calculated due to an invalid slope, and shows the user what Python’s normal error message would be if this exception is encountered. If the TypeError exception is not encountered, that would mean that the ZeroDivisionError was not encountered in the slope function, and the y-intercept function can successfully calculate the value of the y-intercept. A message is again printed to the user to inform them of the successful calculation. 
 
 The next function defined is the midpoint function. This function takes the arguments x_1, x_2, y_1, and y_2, which are inputted by the user, and returns the variables midx and midy which represent the x and y coordinates of the midpoint (figure 6). Exception handling is not required for this function. 
 
- 
+![Code for the midpoint function.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig8.png)
 #### Figure 8. Code for the midpoint function. 
 
 ### The Line Geometry Calculator Program: Presentation
 
 The next functions defined are under the “Presentation” section of the code. The welcome function prints a long message that describes what the program does (figure 9). 
 
- 
+![Code for the welcome function.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig9.png)
 #### Figure 9. Code for the welcome function. 
 
 I then define the functions that request user input for the x1, x2, y1, and y2 values. The figure below shows the code for the function that gets the x1 value from the user (figure 10).
 
- 
+![Code for the function to get user input for the x1 coordinate.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig10.png)
 #### Figure 10. Code for the function to get user input for the x1 coordinate. 
 
 Here, I used a technique that Professor Root used in Assignment05, to continue looping through the while loop if an invalid option is given. At the top of the function, I assign the x1Bln value a Boolean value of True, which will be used as a condition to exit the while loop. In the while loop, I request user input for the variable x1. Since we want to enforce the user to only enter in number values, I use a try statement to see if the user input can be converted to a floating-point value. If the input cannot be converted to a floating-point value, a ValueError (a string is entered but cannot be converted to a floating-point value) or a TypeError (if the input is “None”) will be thrown. In either of these cases, the exception arises because a number value was not inputted by the user. Therefore, I write a print statement to inform the user that only a number can be inputted, and shows what Python’s normal error message would be. If an exception is encountered and the input is invalid, the x1Bln value is assigned a value of False. If the exception is not encountered, the condition is assigned a value of True. If x1Bln is False, the while loop continues to execute until a valid numerical value is obtained from the user. If x1Bln is True, the while loop breaks, and the function is complete. The variable x1 is then returned from the function, for later use in the program. 
@@ -124,14 +124,15 @@ The code for the functions to obtain user input for the x2, y1, and y2 values ar
 
 The next presentation functions I define are the output_menu_tasks and input_menu_choice functions. These functions do not take in any variables. The output_menu_tasks function simply prints the menu of options for the user to view every time a menu option is completed. It does not return any variables. The input_menu_choice function gets user input for which menu choice they would like to carry out, and returns the choice variable for use in if statements later in the program (figure 11). 
 
- 
+![Code for the output_menu_tasks() and input_menu_choice() functions.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig11.png)
 #### Figure 11. Code for the output_menu_tasks() and input_menu_choice() functions. 
 
 
 ### The Line Geometry Calculator Program: Main Body, Menu Option 1
 
 Once all the functions are defined, the main body of the script can execute. In a while loop, which exits with menu option 4, I first call the output_menu_tasks() and input_menu_choice() functions. Once user input for menu choice is obtained, the various menu options can be executed. The figure below shows the code for menu option 1 (figure 12). 
- 
+
+![Code for menu option 1.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig12.png)
 #### Figure 12. Code for menu option 1. 
 
 The first thing that occurs in menu option 1 is that the counter variable, which counts how many times the calculator was run in the current session, increases in value by 1. This allows me to loop through the rows of the pickled binary file later to unpickle each row of data.
@@ -148,7 +149,7 @@ I finish with menu option 1 with a print statement to show the user that their d
 
 While the functions defined above and menu option 1 demonstrated exception handling, menu option 2 demonstrated pickling. Figure 13 below shows the code for the menu option 2 selection (figure 13). 
 
- 
+![Code for menu option 2, demonstrating pickling.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig13.png)
 #### Figure 13. Code for menu option 2, demonstrating pickling. 
 
 I decided against writing a function for menu option 2, as it is not an operation that repeats throughout the code and therefore would not have an added benefit of tucking away in a function. I decided to write the code directly under menu option 2 for ease of reading and understanding my code.   
@@ -160,7 +161,7 @@ Once the data is pickled, I close the connection to the file.
 
 Menu option 3 demonstrates the program’s ability to unpickle the saved binary data. Figure 14 below shows the code written to accomplish this (figure 14). 
 
- 
+![Code for menu option 3, demonstrating unpickling.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig14.png)
 #### Figure 14. Code for menu option 3, demonstrating unpickling. 
 
 Due to the iterative nature of the pickle.load() function in loading only one line at a time, I wanted to find a way to load the entire contents of the file into the program. I did so by using a while loop and two counter variables that I define at the beginning of the program: i and counter. The variable i is used as the iterative variable to allow the while loop to run so long as i is less than or equal to counter, which represents the number of times that the calculator was run in the current session and therefore the number of dictionaries in the list. While the iterative variable i is less than or equal to counter, I want to unpickle each row of data in the file to get the entire contents of the file. 
@@ -172,7 +173,7 @@ I wrote this loop slightly incorrectly to demonstrate a new type of exception, t
 
 The very last menu option allows the user to exit out of the program. This was simple enough, and the code for this option is shown in the figure below (figure 15). 
 
- 
+![Code that exits out of the program.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig15.png)
 #### Figure 15. Code that exits out of the program. 
 
 
@@ -181,17 +182,19 @@ The very last menu option allows the user to exit out of the program. This was s
 Once the code for my program was written and its functionality was verified in PyCharm, I tested it in the MacOS Terminal command line to ensure proper functionality. The figure below shows the properly functioning of the program (figure 16). 
 
  
- 
+![Full run through The Line Geometry Calculator program in the MacOS Terminal command line pt1.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig16a.png)
+![Full run through The Line Geometry Calculator program in the MacOS Terminal command line pt2.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig16b.png)
 #### Figure 16. Full run through The Line Geometry Calculator program in the MacOS Terminal command line. 
 
 I then checked the geomCalcs.dat file that the program generated, and saw that my data was properly serialized in binary format. It was still in a mildly human-readable format, and I could tell that both calculations had been saved by observation of some of the dictionary keys and values (figure 17). 
 
+![The geomCalcs.dat file that generated with the program run.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig17.png)
 #### Figure 17. The geomCalcs.dat file that generated with the program run. 
 
 ## Demonstrating Exception Handling
 The full run through the program above simply demonstrated that the program worked, but I want to highlight the use of exception handling. The first exception I want to demonstrate is the ValueError exception that would arise if a character string was inputted rather than a number (figure 18). 
 
- 
+![The ValueError exception is handled if a character string is inputted rather than a number.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig18.png)
 #### Figure 18. The ValueError exception is handled if a character string is inputted rather than a number. 
 
 It seems like inputting a character string would instead turn a TypeError since we would expect a numerical value rather than a character string to be inputted here. However, the float() function does expect a string input in the form of a number. Therefore, the type is correct (string is expected and received), but the value is incorrect (letter received, not number), thus turning a ValueError. 
@@ -200,7 +203,7 @@ Due to the way I handled this exception, the program alerts the user that invali
 
 The next major exception that would occur in this program is the ZeroDivisionError, if the x1 and x2 coordinates specified are equal and the slope equation must divide by zero. The figure below demonstrates the handling of this exception (Figure 19). 
 
- 
+![The ZeroDivisionError exception is handled by assigning character strings to the slope m and y-intercept b variables.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig19.png)
 #### Figure 19. The ZeroDivisionError exception is handled by assigning character strings to the slope m and y-intercept b variables. 
 
 Here, if the inputted x1 and x2 coordinates are equal, the slope equation will attempt to divide by zero, throwing the ZeroDivisionError exception. In this case, I assign character strings to the slope m and y-intercept b variables, which are shown in the list containing this run’s dictionary values. Python’s default error message will then be printed, along with a more understandable error message that I wrote. 
@@ -210,14 +213,14 @@ These two examples demonstrate my program’s use of exception handling methods,
 ## Demonstrating Pickling and Unpickling
 The menu options 2 and 3 demonstrate pickling and unpickling. The figure below shows a run-through of these menu options (figure 20). 
 
- 
+![The menu options showing the data being pickled unpickled.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig20.png)
 #### Figure 20. The menu options showing the data being pickled unpickled. 
 
 Here, if the user decides to pickle the calculated data, a message is printed to the user that the data was successfully pickled. If they decide to unpickle the data, the data from the geomCalcs.dat file is deserialized back into its original dictionary form, and displayed back to the user. 
 
 The figure below shows the geomCalcs.dat file with the serialized information (figure 21). 
 
- 
+![The binary geomCalcs.dat file containing the serialized information.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig21.png)
 #### Figure 21. The binary geomCalcs.dat file containing the serialized information. 
 
 With my Line Geometry Calculator program, which uses previously learned concepts of data types and loops, and incorporates the newly learned concepts of data pickling and exception handling, I believe I have demonstrated my understanding of this week’s learning goals and completed the assignment.
