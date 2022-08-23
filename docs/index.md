@@ -16,7 +16,7 @@ By default, exceptions are not handled by Python, resulting in a confusing error
 
 An example of handling such errors is as follows, reproduced with changes from GeeksforGeeks.org (Figure 1). 
 
- 
+![Basic code demonstrating error handling.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig1.png)
 #### Figure 1. Basic code demonstrating error handling. 
 
 In this program, I want to calculate a simple math equation to find b given a. I defined the function so that the equation b = a / (a-3) runs only if a<4, so that the equation does not divide by zero when a=3. Next, I used the try and except statements to try the equation for each value in range(5), so every value from 0 to 4. For the exception that occurs, the program handles it and continues to execute. Here, we can see an example of two exceptions being handled, by defining each exception in a tuple. For the value of a=3, the equation b would evaluate to b = 3/0, throwing a ZeroDivisionError exception. For the value of a=4, since the function containing the equation was originally defined for a<4 only, the if statement containing the equation would not execute, and therefore b would not exist. Therefore, for the value a=4, a NameError exception would be thrown. 
