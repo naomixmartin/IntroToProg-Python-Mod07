@@ -170,7 +170,7 @@ Once the data is pickled, I close the connection to the file.
 
 Menu option 3 demonstrates the program’s ability to unpickle the saved binary data. Figure 14 below shows the code written to accomplish this (figure 14). 
 
-![Code for menu option 3, demonstrating unpickling.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig14.png)
+![Code for menu option 3, demonstrating unpickling.](fig14.png)
 #### Figure 14. Code for menu option 3, demonstrating unpickling. 
 
 Due to the iterative nature of the pickle.load() function in loading only one line at a time, I wanted to find a way to load the entire contents of the file into the program. I did so by using a while loop and two counter variables that I define at the beginning of the program: i and counter. The variable i is used as the iterative variable to allow the while loop to run so long as i is less than or equal to counter, which represents the number of times that the calculator was run in the current session and therefore the number of dictionaries in the list. While the iterative variable i is less than or equal to counter, I want to unpickle each row of data in the file to get the entire contents of the file. 
@@ -182,7 +182,7 @@ I wrote this loop slightly incorrectly to demonstrate a new type of exception, t
 
 The very last menu option allows the user to exit out of the program. This was simple enough, and the code for this option is shown in the figure below (figure 15). 
 
-![Code that exits out of the program.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig15.png)
+![Code that exits out of the program.](fig15.png)
 #### Figure 15. Code that exits out of the program. 
 
 
@@ -191,19 +191,19 @@ The very last menu option allows the user to exit out of the program. This was s
 Once the code for my program was written and its functionality was verified in PyCharm, I tested it in the MacOS Terminal command line to ensure proper functionality. The figure below shows the properly functioning of the program (figure 16). 
 
  
-![Full run through The Line Geometry Calculator program in the MacOS Terminal command line pt1.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig16a.png)
-![Full run through The Line Geometry Calculator program in the MacOS Terminal command line pt2.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig16b.png)
+![Full run through The Line Geometry Calculator program in the MacOS Terminal command line pt1.](fig16a.png)
+![Full run through The Line Geometry Calculator program in the MacOS Terminal command line pt2.](fig16b.png)
 #### Figure 16. Full run through The Line Geometry Calculator program in the MacOS Terminal command line. 
 
 I then checked the geomCalcs.dat file that the program generated, and saw that my data was properly serialized in binary format. It was still in a mildly human-readable format, and I could tell that both calculations had been saved by observation of some of the dictionary keys and values (figure 17). 
 
-![The geomCalcs.dat file that generated with the program run.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig17.png)
+![The geomCalcs.dat file that generated with the program run.](fig17.png)
 #### Figure 17. The geomCalcs.dat file that generated with the program run. 
 
 ## Demonstrating Exception Handling
 The full run through the program above simply demonstrated that the program worked, but I want to highlight the use of exception handling. The first exception I want to demonstrate is the ValueError exception that would arise if a character string was inputted rather than a number (figure 18). 
 
-![The ValueError exception is handled if a character string is inputted rather than a number.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig18.png)
+![The ValueError exception is handled if a character string is inputted rather than a number.](fig18.png)
 #### Figure 18. The ValueError exception is handled if a character string is inputted rather than a number. 
 
 It seems like inputting a character string would instead turn a TypeError since we would expect a numerical value rather than a character string to be inputted here. However, the float() function does expect a string input in the form of a number. Therefore, the type is correct (string is expected and received), but the value is incorrect (letter received, not number), thus turning a ValueError. 
@@ -212,7 +212,7 @@ Due to the way I handled this exception, the program alerts the user that invali
 
 The next major exception that would occur in this program is the ZeroDivisionError, if the x1 and x2 coordinates specified are equal and the slope equation must divide by zero. The figure below demonstrates the handling of this exception (Figure 19). 
 
-![The ZeroDivisionError exception is handled by assigning character strings to the slope m and y-intercept b variables.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig19.png)
+![The ZeroDivisionError exception is handled by assigning character strings to the slope m and y-intercept b variables.](fig19.png)
 #### Figure 19. The ZeroDivisionError exception is handled by assigning character strings to the slope m and y-intercept b variables. 
 
 Here, if the inputted x1 and x2 coordinates are equal, the slope equation will attempt to divide by zero, throwing the ZeroDivisionError exception. In this case, I assign character strings to the slope m and y-intercept b variables, which are shown in the list containing this run’s dictionary values. Python’s default error message will then be printed, along with a more understandable error message that I wrote. 
@@ -222,14 +222,14 @@ These two examples demonstrate my program’s use of exception handling methods,
 ## Demonstrating Pickling and Unpickling
 The menu options 2 and 3 demonstrate pickling and unpickling. The figure below shows a run-through of these menu options (figure 20). 
 
-![The menu options showing the data being pickled unpickled.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig20.png)
+![The menu options showing the data being pickled unpickled.](fig20.png)
 #### Figure 20. The menu options showing the data being pickled unpickled. 
 
 Here, if the user decides to pickle the calculated data, a message is printed to the user that the data was successfully pickled. If they decide to unpickle the data, the data from the geomCalcs.dat file is deserialized back into its original dictionary form, and displayed back to the user. 
 
 The figure below shows the geomCalcs.dat file with the serialized information (figure 21). 
 
-![The binary geomCalcs.dat file containing the serialized information.](https://github.com/naomixmartin/IntroToProg-Python-Mod07/blob/main/docs/fig21.png)
+![The binary geomCalcs.dat file containing the serialized information.](fig21.png)
 #### Figure 21. The binary geomCalcs.dat file containing the serialized information. 
 
 With my Line Geometry Calculator program, which uses previously learned concepts of data types and loops, and incorporates the newly learned concepts of data pickling and exception handling, I believe I have demonstrated my understanding of this week’s learning goals and completed the assignment.
